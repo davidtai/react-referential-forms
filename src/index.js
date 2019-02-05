@@ -22,3 +22,5 @@ export { default as MuiState } from './controls/mui-state'
 export { default as MuiSwitch } from './controls/mui-switch'
 export { default as MuiTaxId } from './controls/mui-taxid'
 export { default as MuiText, BaseMuiText } from './controls/mui-text'
+export { default as WebcamCapture } from './controls/webcam'
+
