@@ -7,8 +7,7 @@ import { getLibrary } from '../library'
 
 let countryOpts
 
-@control
-export default class MuiCountry extends BaseMuiText{
+export default @control class MuiCountry extends BaseMuiText{
   static defaultProps = {
     type: 'text',
     autoComplete: 'new-password',
