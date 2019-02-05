@@ -1,7 +1,7 @@
 {
-  "name": "react-referential",
+  "name": "react-referential-forms",
   "version": "1.0.1",
-  "description": "Referential Tree state management intergration for react",
+  "description": "Referential Tree Forms for React",
   "main": "index.mjs",
   "scripts": {
     "build": "sake build",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davidtai/react-referential.git"
+    "url": "git+https://github.com/davidtai/react-referential-forms.git"
   },
   "keywords": [
     "referential",
