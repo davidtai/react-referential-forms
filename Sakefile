@@ -7,7 +7,8 @@ use 'sake-version'
 
 task 'clean', 'clean project', ->
   exec '''
-  rm -rf lib
+  rm index.js
+  rm index.js.map
   rm index.mjs
   rm index.mjs.map
   '''
