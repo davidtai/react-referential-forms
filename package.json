@@ -2,7 +2,8 @@
   "name": "react-referential-forms",
   "version": "1.0.6",
   "description": "Referential Tree Forms for React",
-  "main": "index.mjs",
+  "main": "index.js",
+  "module": "index.mjs",
   "scripts": {
     "build": "sake build",
     "test": "sake test"
