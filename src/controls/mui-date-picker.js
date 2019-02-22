@@ -5,9 +5,7 @@ import { BaseMuiText } from './mui-text'
 
 import { InlineDatePicker, MuiPickersContextConsumer } from 'material-ui-pickers'
 import { defaultFormat, renderUIDate, renderJSONDate } from '../utils/date'
-import { MuiPickersUtilsProvider } from 'material-ui-pickers'
-
-export MuiPickersUtilsProvider
+export { MuiPickersUtilsProvider } from 'material-ui-pickers'
 
 import moment from 'moment-timezone'
 
