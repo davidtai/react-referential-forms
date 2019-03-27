@@ -40,6 +40,7 @@ export class BaseMuiInput extends React.Component{
       errorMessage,
       scrollToError,
       changeNotBlur,
+      forceNewValue,
       ...props
     } = this.props
 
@@ -54,6 +55,7 @@ export class BaseMuiInput extends React.Component{
         ...props
         disabled=disabled
         defaultValue=value
+        value=forceNewValue ? value : undefined
         onBlur=changeNotBlur ? undefined : onChange
         onChange=changeNotBlur ? onChange : undefined
       )

@@ -12,6 +12,8 @@ export default function control(ControlComponent) {
     constructor(props) {
       super(props)
 
+      this.lastUIChangeId = this.changeId = 0
+
       // Unique ID for referencing the control
       this.controlId = controlId++
 
@@ -175,12 +177,17 @@ export default function control(ControlComponent) {
     change = (event) => {
       this.setState({
         errorMessage: '',
-        valid: false
+        valid: false,
+        changeId: this.changeId,
       })
-      return this._change(this.getValue(event))
+
+      this.lastUIChangeId = this.changeId + 1
+
+      return this._change(this.getValue(event), true)
     }
 
     _change(value, rethrow) {
+      this.changeId++
       // trim the value we run the middleware on
       let valueTrimmed = value
 
@@ -237,6 +244,16 @@ export default function control(ControlComponent) {
       delete props.value
       delete props.className
 
+      let lastUIChangeId = this.lastUIChangeId
+      this.lastUIChangeId = this.changeId
+
+      // Do a quick refresh to remove the force set value
+      if (lastUIChangeId < this.changeId) {
+        requestAnimationFrame(() => {
+          this.forceUpdate()
+        })
+      }
+
       return pug`
         .control(
           ref=this.inputRef
@@ -249,6 +266,7 @@ export default function control(ControlComponent) {
             ...props
             value=value
             valid=valid
+            forceNewValue=lastUIChangeId < this.changeId
             errorMessage=errorMessage
           )
         `

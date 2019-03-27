@@ -55,6 +55,7 @@ export class BaseMuiText extends React.Component{
       disabled,
       onChange,
       changeNotBlur,
+      forceNewValue,
       ...props
     } = this.props
 
@@ -112,7 +113,7 @@ export class BaseMuiText extends React.Component{
         InputLabelProps={ shrink: this.state.shrink || isSelect || !!value}
         disabled=disabled
         defaultValue=isSelect ? undefined : value
-        value=isSelect ? value : undefined
+        value=forceNewValue ? value : isSelect ? value : undefined
         helperText=helper
         error=!!errorMessage
         onBlur=isSelect ? undefined : onChange

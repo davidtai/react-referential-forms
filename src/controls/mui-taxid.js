@@ -44,6 +44,7 @@ export default class MuiTaxId extends BaseMuiText{
       middleware,
       instructions,
       InputProps,
+      forceNewValue,
       ...props
     } = this.props
 
@@ -65,6 +66,7 @@ export default class MuiTaxId extends BaseMuiText{
     return pug`TextField(
       ...props
       defaultValue=value
+      value=forceNewValue ? value : undefined
       helperText=helper
       error=!!errorMessage
       InputProps=InputProps
