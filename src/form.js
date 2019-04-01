@@ -54,7 +54,11 @@ export class InputData {
     this.emitter = new Emitter()
   }
 
-  val(v) {
+  val(v, force = false) {
+    if (force) {
+      return this.value = this.data.set(this.name, v).get(this.name)
+    }
+
     return this.emitter.trigger('control:value', v)[0]
   }
 }
