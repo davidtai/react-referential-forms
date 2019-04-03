@@ -58,8 +58,8 @@ export default function control(ControlComponent) {
         appIsMounted: false
       }
 
-      if (props.value != props.defaultValue) {
-        this._change(props.value)
+      if (value != props.defaultValue) {
+        this._change(value)
       }
 
       this.inputRef = React.createRef()

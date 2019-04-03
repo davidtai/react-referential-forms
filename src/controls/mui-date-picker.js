@@ -49,7 +49,7 @@ export default class MuiDatePicker extends BaseMuiText{
       { (utils) => {
         return <InlineDatePicker
           { ...props }
-          value={ moment(value) }
+          value={ moment(value).tz('UTC') }
           keyboard
           utils={ utils }
           onChange={ this.change }
