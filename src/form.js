@@ -66,7 +66,7 @@ export class InputData {
 export default class Form extends React.Component {
   static defaultProps = {
     showErrors: false,
-    singleSubmit: true,
+    singleSubmit: false,
   }
 
   constructor(props) {

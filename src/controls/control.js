@@ -183,7 +183,7 @@ export default function control(ControlComponent) {
 
       this.lastUIChangeId = this.changeId + 1
 
-      return this._change(this.getValue(event), true)
+      return this._change(this.getValue(event))
     }
 
     _change(value, rethrow) {
