@@ -21,7 +21,7 @@ function NumberFormatCustom(props) {
           },
         });
       }}
-      prefix='$'
+      prefix=''
     />
   );
 }
